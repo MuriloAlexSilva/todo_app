@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/screens/todo_item.dart';
 
 class TodoList extends StatefulWidget {
   @override
@@ -19,10 +20,27 @@ class _TodoListState extends State<TodoList> {
           return ListTile(
             title: Text(list[index]),
             subtitle: Text(list[index]),
+            onTap: () => Navigator.push(
+                //NAvigator.push - ir para outra tela
+                context,
+                //MaterialPageRoute para chamar a outra tela
+                MaterialPageRoute(
+                    builder: (context) =>
+                        TodoItem() //Qual Widget abrir da tela,
+                    )),
           );
         },
         separatorBuilder: (context, index) => Divider(),
         itemCount: list.length,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => TodoItem(),
+            )),
+        backgroundColor: Colors.green,
+        child: Icon(Icons.add),
       ),
     );
   }
