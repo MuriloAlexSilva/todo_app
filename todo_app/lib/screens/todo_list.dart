@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 
-class Todo extends StatefulWidget {
+class TodoList extends StatefulWidget {
   @override
-  _TodoState createState() => _TodoState();
+  _TodoListState createState() => _TodoListState();
 }
 
-class _TodoState extends State<Todo> {
+class _TodoListState extends State<TodoList> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Todo List"),
+        centerTitle: true,
+      ),
+    );
   }
 }
